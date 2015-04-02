@@ -3,7 +3,7 @@ guid: 60e6dec22935c9f4bafd1bc17839d223
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - bulletPrefab: {fileID: 164408, guid: 07c2c383f32d72847b725174e74b8519, type: 2}
+  - bulletPrefab: {fileID: 151062, guid: 95a3bd8c19b342341bf9952320739b5b, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
