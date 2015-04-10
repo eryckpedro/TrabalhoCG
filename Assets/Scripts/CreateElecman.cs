@@ -6,42 +6,37 @@ public class CreateElecman : MonoBehaviour {
 	public float timeBetweenCreation = 5f;
 	float time = 0f;
 	public float epsilon = 0.5f;
-	public int numberObjects;
+	public int numberObjects = 1;
 	public int maxNumberObjects;
 
-	public float x_min = 1f;
-	public float x_max = 30f;
-	public float z_min = -19f;
-	public float z_max = -8f;
-	public float y_max = 10f;
-	public float y_min = 4f;
+	public Vector3 position1 = new Vector3(-15.0f, 9.0f, -15.0f);
+	public Vector3 position2 = new Vector3(-12.0f, 9.0f, -12.0f);
+	public Vector3 position3 = new Vector3(-14.0f, 9.0f, -8.0f);
 
+	
 	public GameObject ElecmanMovePrefab;
-	public GameObject ElecmanPrefab;
 
 	float x, y, z;
 
 	void generateObjects() {
 		time = time + Time.deltaTime;
 		if (time >= timeBetweenCreation) {
-			
-			numberObjects = Random.Range(1, maxNumberObjects);
-			
-			for (int i = 1; i<= numberObjects; i++) {
-				x = Random.Range (x_min, x_max);
-				y = Random.Range (y_min, y_max);
-				z = Random.Range (z_min, z_max);
+
+			int pos = Random.Range(1, 3);
+
+			if(pos == 1){
+				GameObject ElecmanMoveObjectPos1 = 
+					Instantiate(ElecmanMovePrefab, position1, Quaternion.identity) as GameObject;
+			}
 				
-				GameObject ElecmanMoveObject = 
-					Instantiate(ElecmanMovePrefab, new Vector3(x,y,z), Quaternion.identity) as GameObject;
-				
-				
-//				x = Random.Range (x_min, x_max);
-//				y = Random.Range (y_min, y_max);
-//				z = Random.Range (z_min, z_max);
-//				GameObject ElecmanObject = 
-//					Instantiate(ElecmanPrefab, new Vector3(x,y,z),  Quaternion.identity) as GameObject;
-				
+			else if (pos == 2){
+				GameObject ElecmanMoveObjectPos2 = 
+					Instantiate(ElecmanMovePrefab, position2, Quaternion.identity) as GameObject;
+			}
+
+			else if (pos == 3){
+				GameObject ElecmanMoveObjectPos3 = 
+					Instantiate(ElecmanMovePrefab, position3, Quaternion.identity) as GameObject;
 			}
 			
 			timeBetweenCreation = Random.Range( timeBetweenCreation - epsilon, timeBetweenCreation + epsilon);
