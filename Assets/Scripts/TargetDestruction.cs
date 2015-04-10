@@ -10,11 +10,12 @@ public class TargetDestruction : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col)
-	{
-
-		ScoreManager.score += scoreValue;
+	{	
 
 		if(col.gameObject.name == "projectilePrefab(Clone)"){
+
+			ScoreManager.score += scoreValue;
+
 			Destroy(this.renderer);
 			Destroy(this.collider);
 
