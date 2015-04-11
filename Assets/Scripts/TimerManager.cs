@@ -11,16 +11,16 @@ public class TimerManager : MonoBehaviour {
 	
 	void Awake (){
 		text = GetComponent <Text> ();
-		timer = 20.0f;
+		timer = 120.0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//text.text = "Score: " + score;
+
 		timer = timer - Time.deltaTime;
 
 		if (timer > 0) {
-			text.text = "Tempo: " + timer;
+			text.text = "Tempo: " + timer.ToString("f1");
 		} else {
 			text.text = "Game Over";
 		}
