@@ -22,7 +22,7 @@ public class TimerManager : MonoBehaviour {
 		if (timer > 0) {
 			text.text = "Tempo: " + timer.ToString("f1");
 		} else {
-			text.text = "Game Over";
+			Application.LoadLevel("GameOverScene");
 		}
 
 
