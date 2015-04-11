@@ -4,7 +4,7 @@ using System.Collections;
 public class Shoot : MonoBehaviour {
 
 	public GameObject bulletPrefab;
-	public float force = 200.0f;
+	public float force = 50.0f;
 	public float waitTime = 0.4f;
 
 	private float time;
