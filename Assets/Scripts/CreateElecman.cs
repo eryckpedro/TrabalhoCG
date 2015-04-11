@@ -3,11 +3,9 @@ using System.Collections;
 
 public class CreateElecman : MonoBehaviour {
 	
-	public float timeBetweenCreation = 3f;
+	public float timeBetweenCreation = 1f;
 	float time = 0f;
-	public float epsilon = 0.5f;
-	public int numberObjects = 1;
-	public int maxNumberObjects;
+	public float epsilon = 1f;
 	
 	public Vector3 position1 = new Vector3(-15.0f, 9.0f, -15.0f);
 	public Vector3 position2 = new Vector3(-12.0f, 9.0f, -10.0f);
@@ -46,9 +44,10 @@ public class CreateElecman : MonoBehaviour {
 			else {
 				target = ShadowManPrefab;
 			}
+
 			
 			if(pos == 1){
-				GameObject ElecmanMoveObjectPos = 
+				GameObject ElecmanMoveObjectPos =
 					Instantiate(target, position1, Quaternion.identity) as GameObject;
 			}
 			

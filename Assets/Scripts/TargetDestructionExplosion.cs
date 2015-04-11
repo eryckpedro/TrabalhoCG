@@ -3,8 +3,8 @@ using System.Collections;
 
 public class TargetDestructionExplosion : MonoBehaviour {
 	
-	public int scoreValue = 10;
-	public Component particleSystemObject;
+	public int scoreValue = 30;
+	public GameObject particleSystemPrefab;
 	
 	
 	void DestroyGameObject(){
@@ -13,12 +13,13 @@ public class TargetDestructionExplosion : MonoBehaviour {
 	
 	void OnCollisionEnter(Collision col)
 	{	
-		
+		 
 		if(col.gameObject.name == "projectilePrefab(Clone)"){
-			
-			this.particleSystem.enableEmission = true;
-			//particleSystem.enableEmission = true;
-			
+
+			GameObject particleSystemObject = Instantiate(particleSystemPrefab, this.transform.position, Quaternion.identity) as GameObject;
+			particleSystemObject.particleSystem.enableEmission = true;
+
+
 			ScoreManager.score += scoreValue;
 			
 			Destroy(this.renderer);
