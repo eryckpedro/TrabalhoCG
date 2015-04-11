@@ -5,7 +5,7 @@ public class CreateElecman : MonoBehaviour {
 
 	public float timeBetweenCreation = 3f;
 	float time = 0f;
-	public float epsilon = 0.5f;
+	public float epsilon = 0.5f; 
 	public int numberObjects = 1;
 	public int maxNumberObjects;
 
