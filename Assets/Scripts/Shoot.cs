@@ -12,6 +12,7 @@ public class Shoot : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		time = Time.time;
+		Screen.showCursor = false;
 	
 	}
 	
