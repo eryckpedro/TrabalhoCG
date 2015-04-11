@@ -30,6 +30,8 @@ public class MouseLook : MonoBehaviour {
 
 	float rotationY = 0F;
 
+	int zoomIn = 0;
+
 	void Update ()
 	{
 		if (axes == RotationAxes.MouseXAndY)
@@ -44,6 +46,16 @@ public class MouseLook : MonoBehaviour {
 		else if (axes == RotationAxes.MouseX)
 		{
 			transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
+		}
+		else if (Input.GetMouseButtonDown(1) && zoomIn == 1)
+		{
+			camera.fieldOfView += 16;
+			zoomIn = 0;
+		}
+		else if (Input.GetMouseButtonDown(1) && zoomIn == 0)
+		{
+			camera.fieldOfView -= 16;
+			zoomIn = 1;
 		}
 		else
 		{
