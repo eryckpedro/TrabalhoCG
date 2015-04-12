@@ -20,7 +20,7 @@ public class TimerManager : MonoBehaviour {
 		timer = timer - Time.deltaTime;
 
 		if (timer > 0) {
-			text.text = "Tempo: " + timer.ToString("f1");
+			text.text = "Time: " + timer.ToString("f1");
 		} else {
 			Application.LoadLevel("GameOverScene");
 		}
